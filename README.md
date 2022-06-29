@@ -10,7 +10,7 @@ Antes de rodar a automação é necessario realizar alguns ajustes.
 - Adicionar os números de verificação em **main.py**
 - Criar uma pasta **log** no diretório raiz do projeto
 
-###Observação
+### Observação
 
 Ao rodar a automação pela primeira vez será necessário efetuar o login com o celular.
 

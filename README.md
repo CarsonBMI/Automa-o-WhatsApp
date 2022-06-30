@@ -5,8 +5,8 @@
 Antes de rodar a automação é necessario realizar alguns ajustes.
 
 - Instalar as dependências com o seguinte comando:
-		pip install -r dependencies..txt
-- Adicionar o executável do chromedriver no diretório raiz do projeto
+		**pip install -r dependencies..txt**
+- Adicionar o executável do **chromedriver** no diretório raiz do projeto
 - Ajustar o arquivo **config.json**
 - Adicionar os números de verificação em **main.py**
 - Criar uma pasta **log** no diretório raiz do projeto

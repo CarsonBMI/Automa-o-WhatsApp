@@ -63,7 +63,7 @@ class Whatsapp:
 
         if(len(numbers) > 0):
             driver = webdriver.Chrome(executable_path=str(pathlib.Path(__file__).parent.resolve()) + '\chromedriver.exe', chrome_options=options)
-            time.sleep(1)
+            time.sleep(1) #bug fix
             for number in numbers:
                 messages = db.execQuery("SELECT text_msg FROM ocean_cfg.msg_whatsapp_log WHERE mobile_phone = '" + number + "' AND date_send = '" + datetime.today().strftime('%Y%m%d') + "' AND send_ok = 0 ORDER BY task_code, user_login, sequence_msg")
 

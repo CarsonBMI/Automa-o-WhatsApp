@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 from datetime import datetime
 import time
 import pathlib
@@ -8,7 +9,7 @@ class Whatsapp:
     def find_element(self, driver, xpath, timeout: int = 300):
         while timeout > 0:
             try:
-                return driver.find_element_by_xpath(xpath).click()
+                return driver.find_element(By.XPATH, xpath).click()
             except:
                 time.sleep(1)
                 timeout -= 1
@@ -18,7 +19,7 @@ class Whatsapp:
         while timeout > 0:
             try:
                 for m in messages:
-                    inputElement = driver.find_element_by_xpath(xpath)
+                    inputElement = driver.find_element(By.XPATH, xpath)
                     msplit = m.split('\\r\\n')
                     for part in msplit:
                         inputElement.send_keys(part.strip())
@@ -38,17 +39,17 @@ class Whatsapp:
         
         while timeout > 0:
                 try:
-                    driver.find_element_by_xpath(xpath1)
+                    driver.find_element(By.XPATH, xpath1)
                     print('Message Sent! - Enviada')
                     return
                 except:
                     try:
-                        driver.find_element_by_xpath(xpath2)
+                        driver.find_element(By.XPATH, xpath2)
                         print('Message Sent! - Entregue')
                         return
                     except:
                         try:
-                            driver.find_element_by_xpath(xpath3)
+                            driver.find_element(By.XPATH, xpath3)
                             print('Message Sent! - Lida')
                             return
                         except:
@@ -63,7 +64,7 @@ class Whatsapp:
 
         if(len(numbers) > 0):
             driver = webdriver.Chrome(executable_path=str(pathlib.Path(__file__).parent.resolve()) + '\chromedriver.exe', chrome_options=options)
-            time.sleep(1) #bug fix
+            time.sleep(1)
             for number in numbers:
                 messages = db.execQuery("SELECT text_msg FROM ocean_cfg.msg_whatsapp_log WHERE mobile_phone = '" + number + "' AND date_send = '" + datetime.today().strftime('%Y%m%d') + "' AND send_ok = 0 ORDER BY task_code, user_login, sequence_msg")
 

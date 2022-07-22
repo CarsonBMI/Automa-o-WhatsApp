@@ -71,7 +71,7 @@ class Whatsapp:
                 driver.get('https://wa.me/'+number)
 
                 self.find_element(driver, '//*[@id="action-button"]')
-                self.find_element(driver, '/html/body/div[1]/div[1]/div[2]/div/section/div/div/div/div[3]/div/div/h4[2]/a')
+                #self.find_element(driver, '/html/body/div[1]/div[1]/div[2]/div/section/div/div/div/div[3]/div/div/h4[2]/a')
                 #time.sleep(10000)
                 self.send_message(driver, '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]', messages)
 
@@ -86,7 +86,7 @@ class Whatsapp:
                 driver.get('https://wa.me/'+number)
 
                 self.find_element(driver, '//*[@id="action-button"]')
-                self.find_element(driver, '/html/body/div[1]/div[1]/div[2]/div/section/div/div/div/div[3]/div/div/h4[2]/a')
+                #self.find_element(driver, '/html/body/div[1]/div[1]/div[2]/div/section/div/div/div/div[3]/div/div/h4[2]/a')
                 self.send_message(driver, '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]', message)
 
                 self.verify_sent(driver, message)
